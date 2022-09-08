@@ -13,7 +13,7 @@ public class MySqlConnection {
 	private MySqlConnection() {
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm","root","Vtalent@123");
 		} catch (ClassNotFoundException e){
 			e.printStackTrace();
@@ -27,7 +27,7 @@ public class MySqlConnection {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(MySqlConnection.getInstance());
+		System.out.println(mysqlconnection.getInstance());
 
 	}
 

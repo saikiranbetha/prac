@@ -31,11 +31,29 @@ public class DBOperations {
 	
 		DBOperations db = new DBOperations();
 		Scanner sc = new Scanner(System.in);
+		
 		Employee em = new Employee();
-		sc.close();
+		
 		System.out.println("Please enter emp id");
 		em.setId(sc.nextInt());
-
+		
+		sc.nextLine();
+		
+		System.out.println("Please enter emp name");
+		em.setName(sc.nextLine());
+		
+		
+		System.out.println("Please enter salary");
+		em.setSalary(sc.nextDouble());
+		sc.nextLine();
+		
+		System.out.println("Please enter address");
+		em.setAddress(sc.nextLine());
+		
+		sc.close();
+		
+		db.insertDataWithStatement(em);
+		
 	}
 
 }
