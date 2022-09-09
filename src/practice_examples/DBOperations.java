@@ -90,14 +90,8 @@ public class DBOperations {
 			break;
 			
 			case 3 :
-				System.out.println("Please enter emp id");
-				em.setId(sc.nextInt());
-				
-				sc.nextLine();
-				
 				System.out.println("Please enter emp name");
-				em.setName(sc.nextLine());
-				
+				em.setName(sc.next());
 				
 				System.out.println("Please enter salary");
 				em.setSalary(sc.nextDouble());
@@ -106,7 +100,9 @@ public class DBOperations {
 				System.out.println("Please enter address");
 				em.setAddress(sc.nextLine());
 				
-				
+				System.out.println("Please enter emp id");
+				em.setId(sc.nextInt());
+					
 				db.updateData(em);
 			break;
 			
