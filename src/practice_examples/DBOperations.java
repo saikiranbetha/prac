@@ -56,56 +56,56 @@ public class DBOperations {
 	public static void main(String[] args) {
 	
 		DBOperations db = new DBOperations();
-		Scanner sc = new Scanner(System.in);
-		
-		for(;;) {
-			System.out.println("please enter your choice = \n" + "1.insert employee data \n" + "2.delete employee data \n" + "3.Update employee data");
-			int n = sc.nextInt();
-			Employee em = new Employee();
-			switch(n) {
-			case 1 :
-				System.out.println("Please enter emp id");
-				em.setId(sc.nextInt());
-				
-				sc.nextLine();
-				
-				System.out.println("Please enter emp name");
-				em.setName(sc.nextLine());
-				
-				
-				System.out.println("Please enter salary");
-				em.setSalary(sc.nextDouble());
-				sc.nextLine();
-				
-				System.out.println("Please enter address");
-				em.setAddress(sc.nextLine());
-				
-				
-				db.insertDataWithStatement(em);
-			break;
-			case 2 :
-				System.out.println("Please enter a id to delete");
-				em.setId(sc.nextInt());
-				db.deleteData(em);
-			break;
-			
-			case 3 :
-				System.out.println("Please enter emp name");
-				em.setName(sc.next());
-				
-				System.out.println("Please enter salary");
-				em.setSalary(sc.nextDouble());
-				sc.nextLine();
-				
-				System.out.println("Please enter address");
-				em.setAddress(sc.nextLine());
-				
-				System.out.println("Please enter emp id");
-				em.setId(sc.nextInt());
+		try (Scanner sc = new Scanner(System.in)) {
+			for(;;) {
+				System.out.println("please enter your choice = \n" + "1.insert employee data \n" + "2.delete employee data \n" + "3.Update employee data");
+				int n = sc.nextInt();
+				Employee em = new Employee();
+				switch(n) {
+				case 1 :
+					System.out.println("Please enter emp id");
+					em.setId(sc.nextInt());
 					
-				db.updateData(em);
-			break;
-			
+					sc.nextLine();
+					
+					System.out.println("Please enter emp name");
+					em.setName(sc.nextLine());
+					
+					
+					System.out.println("Please enter salary");
+					em.setSalary(sc.nextDouble());
+					sc.nextLine();
+					
+					System.out.println("Please enter address");
+					em.setAddress(sc.nextLine());
+					
+					
+					db.insertDataWithStatement(em);
+				break;
+				case 2 :
+					System.out.println("Please enter a id to delete");
+					em.setId(sc.nextInt());
+					db.deleteData(em);
+				break;
+				
+				case 3 :
+					System.out.println("Please enter emp name");
+					em.setName(sc.next());
+					
+					System.out.println("Please enter salary");
+					em.setSalary(sc.nextDouble());
+					sc.nextLine();
+					
+					System.out.println("Please enter address");
+					em.setAddress(sc.nextLine());
+					
+					System.out.println("Please enter emp id");
+					em.setId(sc.nextInt());
+						
+					db.updateData(em);
+				break;
+				
+				}
 			}
 		}
 	}
