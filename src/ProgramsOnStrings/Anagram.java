@@ -81,6 +81,7 @@ public class Anagram {
 		s1 = removeSpaces(s1);
 		s2 = removeSpaces(s2);
 		boolean b = compare(s1,s2);
+		sc.close();
 		
 		if(b)
 			System.out.println("String is Anagram");
