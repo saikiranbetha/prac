@@ -1,5 +1,7 @@
 package DecStrings;
 
+
+// Palindrome checking
 import java.util.Scanner;
 
 public class P02 {
